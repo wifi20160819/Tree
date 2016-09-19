@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define Maxsize 100
+typedef struct TNode*Position;
+typedef Position BinTree;
+struct TNode{
+	int Date;
+	BinTree Left;
+	BinTree Right;
+};
+void PreOrderTraversal(BinTree  ){
+    if(BT){
+		printf("%d",BT->Date);
+        PreOrderTraversal(BT->Left);
+		PreOrderTraversal(BT->Right);
+	}
+}//递归先序
+void InOrderTraversal(BinTree BT){
+	if(BT){
+        InOrderTraversal(BT->Left);
+		printf("%d",BT->Date);
+        InOrderTraversal(BT->Right);
+	}
+}//递归中序
+void PostOrderTraversal(BinTree BT){
+	if(BT){
+        PostOrderTraversal(BT->Left);
+        PostOrderTraversal(BT->Right);
+		printf("%d",BT->Date);
+	}
+}//递归后序
+void InOrderTraversal(BinTree BT){
+	Stack S=CreatStack(Maxsize);
+	BinTree T=BT;
+	while(T||!IsEmpty(S){
+		while(T){
+			Push(S,T);
+            T=T->Left；
+		}
+		if(!IsEmpty(S)){
+			T=Pop(S);
+			printf("%d",T->Date);
+			T=T->Right;
+		}
+	}
+  
+} //先序非递归函数
